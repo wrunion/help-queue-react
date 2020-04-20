@@ -5,8 +5,10 @@ import TicketList from './TicketList';
 function App(){
   return (
     <React.Fragment>
-      <Header />
-      <TicketList />
+      <div class="ui container" id="content-all">
+        <Header />
+        <TicketList />
+      </div>
     </React.Fragment>
   );
 }

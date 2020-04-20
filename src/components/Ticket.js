@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Segment } from 'semantic-ui-react';
 
 function Ticket(props){
   return (
-    <React.Fragment>
-      <h3>{props.location}</h3>
-      <h3>{props.names}</h3>
+    <Segment>
+      <h3 class="ticket-header">{props.names} - {props.location}</h3>
       <p><em>{props.issue}</em></p>
-      <hr/>
-    </React.Fragment>
+    </Segment>
   );
 }
 
