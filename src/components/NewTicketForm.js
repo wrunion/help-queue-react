@@ -1,14 +1,18 @@
 import React from 'react';
 import { Form, Button, Segment } from 'semantic-ui-react';
 import { v4 } from 'uuid';
+import PropTypes from 'prop-types';
 
-function NewTicketForm() {
+function NewTicketForm(props) {
 
   function handleTicketSubmission(event) {
     event.preventDefault();
-    console.log(event.target.names.value);
-    console.log(event.target.location.value);
-    console.log(event.target.issue.value);
+    props.onNewTicketCreation({
+      names: event.target.names.value, 
+      location: event.target.location.value,
+      issue: event.target.issue.value,
+      id: v4()
+    });
   }
 
   return (
@@ -17,15 +21,15 @@ function NewTicketForm() {
         <Form id="new-ticket-form" onSubmit={handleTicketSubmission} >
           <Form.Field>
             <label>Names</label>
-            <input placeholder='Pair Names' />
+            <input name='names' placeholder='Pair Names' />
           </Form.Field>
           <Form.Field>
             <label>Location</label>
-            <input placeholder='Location' />
+            <input name='location' placeholder='Location' />
           </Form.Field>
           <Form.Field>
             <label>Describe your issue:</label>
-            <textarea placeholder='Describe your issue' />
+            <textarea name='issue' placeholder='Describe your issue' />
           </Form.Field>
           <Button fluid color="teal" type='submit'>Help!</Button>  
         </Form>
@@ -33,5 +37,9 @@ function NewTicketForm() {
     </React.Fragment>
   );
 }
+
+NewTicketForm.propTypes = {
+  onNewTicketCreation: PropTypes.func
+};
 
 export default NewTicketForm;
