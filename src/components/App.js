@@ -5,7 +5,7 @@ import TicketControl from './TicketControl';
 function App(){
   return (
     <React.Fragment>
-      <div class="ui container" id="content-all">
+      <div className="ui container" id="content-all">
         <Header />
         <TicketControl />
       </div>
