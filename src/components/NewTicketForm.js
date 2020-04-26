@@ -21,15 +21,15 @@ function NewTicketForm(props) {
         <Form id="new-ticket-form" onSubmit={handleTicketSubmission} >
           <Form.Field>
             <label>Names</label>
-            <input name='names' placeholder='Pair Names' />
+            <input name='names' placeholder='Pair Names' value='Javier and Lexi' />
           </Form.Field>
           <Form.Field>
             <label>Location</label>
-            <input name='location' placeholder='Location' />
+            <input name='location' placeholder='Location' value='3A' />
           </Form.Field>
           <Form.Field>
             <label>Describe your issue:</label>
-            <textarea name='issue' placeholder='Describe your issue' />
+            <textarea name='issue' placeholder='Describe your issue' value={`Firebase wont save!`} />
           </Form.Field>
           <Button fluid color="teal" type='submit'>Help!</Button>  
         </Form>
