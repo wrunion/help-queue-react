@@ -3,19 +3,19 @@ import Ticket from './Ticket';
 
 const masterTicketList = [
   {
-    names: 'Thato and Haley',
+    names: 'Javier and Haley',
     location: '3A',
-    issue: 'Firebase won\'t save record!'
+    issue: `Firebase won't save record!`
   },
   {
-    names: 'Sleater and Kinney',
+    names: 'Alex and Danielle',
     location: '4B',
-    issue: 'Prop types are throwing an error.'
+    issue: `Prop types are throwing an error.`
   },
   {
     names: 'Imani & Jacob',
     location: '9F',
-    issue: 'Child component isn\'t rendering.'
+    issue: `Child component isn't rendering.`
   }
 ];
 
