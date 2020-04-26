@@ -14,38 +14,24 @@ function NewTicketForm() {
   return (
     <React.Fragment>
       <Segment>
-      <Form onSubmit={handleTicketSubmission} >
-        <input
-          type='text'
-          name='names'
-          placeholder='Pair Names' />
-        <input 
-          type='text'
-          name='location'
-          placeholder='Location' />
-        <textarea
-          name='issue'
-          placeholder='Describe your issue' />
-        <Button fluid color="teal" type='submit'>Help!</Button>  
-      </Form>
+        <Form id="new-ticket-form" onSubmit={handleTicketSubmission} >
+          <Form.Field>
+            <label>Names</label>
+            <input placeholder='Pair Names' />
+          </Form.Field>
+          <Form.Field>
+            <label>Location</label>
+            <input placeholder='Location' />
+          </Form.Field>
+          <Form.Field>
+            <label>Describe your issue:</label>
+            <textarea placeholder='Describe your issue' />
+          </Form.Field>
+          <Button fluid color="teal" type='submit'>Help!</Button>  
+        </Form>
       </Segment>
     </React.Fragment>
   );
 }
-
-{/* <Form>
-<Form.Field>
-  <label>First Name</label>
-  <input placeholder='First Name' />
-</Form.Field>
-<Form.Field>
-  <label>Last Name</label>
-  <input placeholder='Last Name' />
-</Form.Field>
-<Form.Field>
-  <Checkbox label='I agree to the Terms and Conditions' />
-</Form.Field>
-<Button type='submit'>Submit</Button>
-</Form> */}
 
 export default NewTicketForm;
