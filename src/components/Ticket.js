@@ -5,8 +5,10 @@ import { Segment } from 'semantic-ui-react';
 function Ticket(props){
   return (
     <Segment>
-      <h3 className="ticket-header">{props.names} - {props.location}</h3>
-      <p><em>{props.issue}</em></p>
+      <div onClick = {() => props.whenTicketClicked(props.id)}>
+        <h3 className="ticket-header">{props.names} - {props.location}</h3>
+        <p><em>{props.issue}</em></p>
+      </div>
     </Segment>
   );
 }
@@ -14,7 +16,9 @@ function Ticket(props){
 Ticket.propTypes = {
   names: PropTypes.string,
   location: PropTypes.string,
-  issue: PropTypes.string
+  issue: PropTypes.string,
+  id: PropTypes.string,
+  whenTicketClicked: PropTypes.func
 }
 
 export default Ticket;
